@@ -11,11 +11,13 @@ const showMessage = function (e) {
     } else { divMessage.textContent = '' }
 }
 
-
-const focusChange = function () {
-    input.style.backgroundColor = 'black';
-    input.style.color = 'white'
+const onFocus = function (e) {
+    e.target.classList.add('active');
+}
+const onBlur = function (e) {
+    e.target.classList.remove('active');
 }
 
 input.addEventListener('input', showMessage);
-input.addEventListener('focus', focusChange);
+input.addEventListener('focus', onFocus);
+input.addEventListener('blur', onBlur);
